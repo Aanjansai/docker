@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  database:
+    image: postgres
+    container_name: pg_container
+    volumes:
+       - pgdata:/var/lib/postgresql/data
+
+  app:
+    build: .
+    container_name: ch_container
+    links:
+     - database
+    environment:
+      - PASSWORD=postgresql1112
+      - USER=postgresql
+      - NAME=chatapplication
+      - HOST=127.0.0.1
+      - PORT=5432
+    depends_on:
+      - database
+
+volumes:
+  pgdata: {}
