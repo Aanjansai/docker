@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> cc38e44e5d6209f35de4f07065b00e6890ecc30e
 version: '3'
 
 services:
@@ -24,4 +27,7 @@ services:
 
 volumes:
   pgdata: {}
+<<<<<<< HEAD
 
+=======
+>>>>>>> cc38e44e5d6209f35de4f07065b00e6890ecc30e
