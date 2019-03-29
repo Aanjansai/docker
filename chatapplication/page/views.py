@@ -23,7 +23,7 @@ def signup(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return render(request, 'page/registrationSuccess.html')
     else:
         form = UserCreationForm()
     return render(request, 'page/signup.html', {

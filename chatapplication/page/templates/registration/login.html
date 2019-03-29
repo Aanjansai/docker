@@ -1,6 +1,7 @@
 {% extends 'page/base.html'%}
 {% block content %}
-<h2> login </h2>
+<center>
+<h2> Login </h2>
 
 <!--To represent the login form-->
 
@@ -8,6 +9,7 @@
     <!-- csrf_token is used for generate random token number -->
     {% csrf_token%}
     {{ form.as_p }}
-    <button type="submit">login</button>
+    <button type="submit">Login</button>
 </form>
+</center>
 {% endblock%}

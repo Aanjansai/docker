@@ -25,7 +25,7 @@ SECRET_KEY = 'xux7u0pd8r#k)fbf6+s4!8uksw(e!-y!je($v_j7m1r+g@z32-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -85,16 +85,15 @@ CHANNEL_LAYERS = {
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'chatapplication',
-        'USER': 'postgresql',
-        'PASSWORD': 'postgresql1112',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
+            'default': {
+                'ENGINE': 'django.db.backends.postgresql',
+                'NAME': 'chatapplication',
+                'USER': 'postgres',
+                'PASSWORD': 'postgresql1112',
+                'HOST': '127.0.0.1',
+                'PORT': '5432',
+      }
 }
 
 # Password validation
@@ -137,4 +136,4 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/chat'
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+

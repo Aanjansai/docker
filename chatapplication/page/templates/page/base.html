@@ -4,15 +4,16 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <style>
-    body {background-color: DarkGrey;}
+    body {background-image:url('https://i.imgur.com/IQ8dT.jpg');}
+
 </style>
 <body>
-    <center><h1>Bridgelabz</h1></center>
-    <a href="{% url 'home' %}"><h3>HOME</h3></a>
-    <a href="{% url 'signup' %}"><p align="right">SIGNUP</p></a>
-    <a href="{% url 'login' %}"><p align="right">LOGIN</p></a>
+<center><span style="color:green; font-size:37px; ">GOOGLE</span><span style="color:red;  font-size:37px; margin-left:21px;">CLOUD</span><span style="color:blue;  font-size:37px; margin-left:21px; " >PLATFORM</span></center>
+    <a href="{% url 'home' %}"><h3 style="color:white" >HOME</h3></a>
+    <a href="{% url 'login' %}"><p style="color:white" align="right">LOGIN</p></a>
+    <a href="{% url 'signup' %}"><p style="color:white" align="right">SIGNUP</p></a>
 <!-- horizontal tag -->
-    <hr>
+
     {% block content %}
     {% endblock %}
 </body>

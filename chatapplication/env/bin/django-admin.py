@@ -1,4 +1,4 @@
-#!/home/app/chatapplication/env/bin/python3
+#!/home/admin1/project/env/bin/python3
 from django.core import management
 
 if __name__ == "__main__":
