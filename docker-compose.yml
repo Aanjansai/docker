@@ -10,7 +10,7 @@ services:
 
   app:
     build: .
-    container_name: chatapp_container
+    container_name: chat_container
     links:
      - database
     environment:
