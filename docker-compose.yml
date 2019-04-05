@@ -17,7 +17,7 @@ services:
       - PASSWORD=postgresql1112
       - USER=postgresql
       - NAME=chatapplication
-      - HOST=127.0.0.1
+      - HOST=db
       - PORT=5432
     depends_on:
       - database
