@@ -4,8 +4,8 @@ steps:
   timeout: 180s
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/$PROJECT_ID/webapp']
-images:
-- 'gcr.io/$PROJECT_ID/webapp'
+#images:
+#- 'gcr.io/$PROJECT_ID/webapp'
 - name: 'gcr.io/cloud-builders/gcloud'
   args: [ 'beta', 'compute', 'instance-groups', 'managed', 'rolling-action', 'restart', 'dockergroup', '--zone=asia-south1-c' ]
 
