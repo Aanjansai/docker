@@ -1,19 +1,24 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/webapp:1.0.$BUILD_ID', '.']
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/webapp', '.']
   timeout: 180s
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/$PROJECT_ID/webapp:1.0.$BUILD_ID']
-- name: 'gcr.io/cloud-builders/kubectl'
-  args:
-  - set
-  - image
-  - deployment
-  - webapp
-  - webapp=gcr.io/$PROJECT_ID/webapp:1.0.$BUILD_ID
-  env:
-  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=webapplication'
+  args: ['push', 'gcr.io/$PROJECT_ID/webapp']
+images:
+- 'gcr.io/$PROJECT_ID/webapp'
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: [ 'beta', 'compute', 'instance-groups', 'managed', 'rolling-action', 'restart', 'dockergroup', '--zone=asia-south1-c' ]
+
+#- name: 'gcr.io/cloud-builders/kubectl'
+  #args:
+  #- set
+  #- image
+  #- deployment
+  #- webapp
+  #- webapp=gcr.io/$PROJECT_ID/webapp:1.0.$BUILD_ID
+  #env:
+  #- 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
+  #- 'CLOUDSDK_CONTAINER_CLUSTER=webapplication'
 #- name: 'gcr.io/cloud-builders/kubectl'
   #args:
   #- 'apply'
